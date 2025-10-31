@@ -1,0 +1,84 @@
+// public/dimensions-visualization.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Dimensions Visualization | Simulation Hypothesis Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Higher Dimensions Visualization</h1>
+            <p>Understanding Dimensions Beyond Our Perception</p>
+        </header>
+
+        <main>
+            <section id="dimension-controls">
+                <h2>Dimension Controls</h2>
+                <div class="control-group">
+                    <label for="dimension-number">Select Dimension:</label>
+                    <select id="dimension-number">
+                        <option value="1">1D - Line</option>
+                        <option value="2">2D - Plane</option>
+                        <option value="3" selected>3D - Space</option>
+                        <option value="4">4D - Spacetime</option>
+                        <option value="5">5D - Kaluza-Klein</option>
+                        <option value="10">10D - String Theory</option>
+                        <option value="11">11D - M-Theory</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="projection-method">Projection Method:</label>
+                    <select id="projection-method">
+                        <option value="orthographic">Orthographic</option>
+                        <option value="perspective">Perspective</option>
+                        <option value="stereographic">Stereographic</option>
+                    </select>
+                </div>
+                
+                <button id="animate">Animate</button>
+                <button id="reset-view">Reset View</button>
+            </section>
+
+            <section id="dimension-visualizer">
+                <h3>Dimensional Projection</h3>
+                <div id="visualization-container"></div>
+            </section>
+
+            <section id="dimension-info">
+                <div class="panel">
+                    <h3>About This Dimension</h3>
+                    <div id="dimension-description">
+                        <p>Loading dimension information...</p>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Physical Implications</h3>
+                    <div id="physical-implications">
+                        <p>How would physics work in this dimension?</p>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Simulation Possibilities</h3>
+                    <div id="simulation-possibilities">
+                        <p>How could this dimension indicate a simulated reality?</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Simulation Hypothesis Explorer | Understanding Higher Dimensions</p>
+        </footer>
+    </div>
+
+    <script src="dimensions-visualizer.js"></script>
+</body>
+</html>

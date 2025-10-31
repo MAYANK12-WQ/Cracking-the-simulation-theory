@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimensional Analysis | Simulation Hypothesis Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Dimensional Analysis Explorer</h1>
+            <p>Understanding How Dimensions Affect Simulation Probability</p>
+        </header>
+
+        <main>
+            <section id="dimension-controls">
+                <h2>Dimension Analysis Controls</h2>
+                
+                <div class="control-group">
+                    <label for="dimension-start">Start Dimensions:</label>
+                    <input type="range" id="dimension-start" min="1" max="11" step="1" value="1">
+                    <span id="start-value">1</span>
+                </div>
+                
+                <div class="control-group">
+                    <label for="dimension-end">End Dimensions:</label>
+                    <input type="range" id="dimension-end" min="1" max="11" step="1" value="10">
+                    <span id="end-value">10</span>
+                </div>
+                
+                <div class="control-group">
+                    <label for="complexity-factor">Complexity Factor:</label>
+                    <input type="range" id="complexity-factor" min="0.1" max="1.0" step="0.1" value="0.6">
+                    <span id="complexity-factor-value">0.6</span>
+                </div>
+                
+                <div class="control-group">
+                    <label for="simulation-iterations">Iterations per Dimension:</label>
+                    <select id="simulation-iterations">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+                
+                <button id="run-analysis">Run Dimensional Analysis</button>
+                <button id="compare-theories">Compare Physics Theories</button>
+                <button id="export-results">Export Results</button>
+            </section>
+
+            <section id="dimension-visualization">
+                <h3>Dimension vs Simulation Probability</h3>
+                <div id="dimension-chart-container">
+                    <canvas id="dimension-chart"></canvas>
+                </div>
+                <div id="theory-comparison">
+                    <canvas id="theory-comparison-chart"></canvas>
+                </div>
+            </section>
+
+            <section id="dimension-analysis">
+                <div class="panel">
+                    <h3>Analysis Results</h3>
+                    <div id="analysis-summary">
+                        <p>Run analysis to see dimensional effects on simulation probability</p>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <h3>Physics Theory Predictions</h3>
+                    <div id="theory-predictions">
+                        <div class="theory-item">
+                            <h4>String Theory (10D)</h4>
+                            <p>Requires 10 dimensions for mathematical consistency</p>
+                            <p>Probability Prediction: <span id="string-theory-prob">-</span></p>
+                        </div>
+                        <div class="theory-item">
+                            <h4>M-Theory (11D)</h4>
+                            <p>Unifies string theories with 11 dimensions</p>
+                            <p>Probability Prediction: <span id="m-theory-prob">-</span></p>
+                        </div>
+                        <div class="theory-item">
+                            <h4>Kaluza-Klein (5D)</h4>
+                            <p>Unifies gravity and electromagnetism in 5D</p>
+                            <p>Probability Prediction: <span id="kaluza-klein-prob">-</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <h3>Key Insights</h3>
+                    <div id="key-insights">
+                        <ul>
+                            <li>Higher dimensions may indicate computational substrate</li>
+                            <li>Specific dimension counts could be signatures of design</li>
+                            <li>Observable physics emerges from higher-dimensional reality</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Simulation Hypothesis Explorer | Dimensional Analysis</p>
+        </footer>
+    </div>
+
+    <script src="dimensional-analysis.js"></script>
+</body>
+</html>

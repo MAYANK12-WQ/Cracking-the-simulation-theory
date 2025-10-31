@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Hypothesis Explorer | Exploring Reality's True Nature</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Simulation Hypothesis Explorer</h1>
+            <p>Visualizing Reality's Hidden Dimensions</p>
+        </header>
+
+        <main>
+            <section id="controls">
+                <h2>Simulation Parameters</h2>
+                <div class="control-group">
+                    <label for="dimension-select">Dimensions:</label>
+                    <select id="dimension-select">
+                        <option value="3">3D (Observable Universe)</option>
+                        <option value="4">4D (With Time)</option>
+                        <option value="5">5D (Kaluza-Klein)</option>
+                        <option value="10">10D (String Theory)</option>
+                        <option value="11">11D (M-Theory)</option>
+                        <option value="n">N-Dimensional</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="simulation-factor">Simulation Factor:</label>
+                    <input type="range" id="simulation-factor" min="0" max="1" step="0.01" value="0.5">
+                    <span id="simulation-factor-value">0.5</span>
+                </div>
+
+                <div class="control-group">
+                    <label for="projection-type">Projection Type:</label>
+                    <select id="projection-type">
+                        <option value="orthographic">Orthographic</option>
+                        <option value="perspective">Perspective</option>
+                        <option value="stereographic">Stereographic</option>
+                    </select>
+                </div>
+
+                <button id="run-simulation">Run Simulation</button>
+                <button id="reset">Reset</button>
+            </section>
+
+            <section id="visualization">
+                <div id="3d-container"></div>
+                <div id="chart-container">
+                    <canvas id="simulation-chart"></canvas>
+                </div>
+            </section>
+
+            <section id="results">
+                <div class="panel">
+                    <h3>Simulation Probability</h3>
+                    <div id="probability-display">Initializing...</div>
+                    <div id="probability-bar-container">
+                        <div id="probability-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Potential Artifacts</h3>
+                    <div id="artifacts-display">
+                        <p>Analyzing for simulation artifacts...</p>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Detected Patterns</h3>
+                    <div id="patterns-display">
+                        <p>Scanning for unusual patterns...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Simulation Hypothesis Explorer | Advanced ML/DL Analysis of Reality's True Nature</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
