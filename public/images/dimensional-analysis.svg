@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#0f1a2d"/>
+  <text x="200" y="40" text-anchor="middle" fill="#a29bfe" font-size="20" font-family="Arial" font-weight="bold">
+    Dimension vs Probability Surface
+  </text>
+  <!-- 3D Surface plot -->
+  <path d="M 80 220 Q 120 180 160 200 Q 200 160 240 180 Q 280 140 320 160 
+           L 320 200 Q 280 180 240 220 Q 200 200 160 240 Q 120 220 80 260 Z" 
+        fill="#6c5ce7" opacity="0.6" stroke="#a29bfe" stroke-width="1"/>
+  <!-- 3D effect lines -->
+  <line x1="80" y1="220" x2="80" y2="260" stroke="#a29bfe" stroke-width="1"/>
+  <line x1="160" y1="200" x2="160" y2="240" stroke="#a29bfe" stroke-width="1"/>
+  <line x1="240" y1="180" x2="240" y2="220" stroke="#a29bfe" stroke-width="1"/>
+  <line x1="320" y1="160" x2="320" y2="200" stroke="#a29bfe" stroke-width="1"/>
+  <!-- Axes -->
+  <line x1="50" y1="250" x2="350" y2="250" stroke="#e6e6e6" stroke-width="2"/>
+  <line x1="50" y1="250" x2="50" y2="50" stroke="#e6e6e6" stroke-width="2"/>
+  <line x1="50" y1="250" x2="120" y2="180" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="4"/>
+  <!-- Axes labels -->
+  <text x="360" y="255" fill="#e6e6e6" font-size="12" font-family="Arial">Dims</text>
+  <text x="40" y="45" fill="#e6e6e6" font-size="12" font-family="Arial">Prob</text>
+  <text x="110" y="170" transform="rotate(-45, 110, 170)" fill="#e6e6e6" font-size="12" font-family="Arial">Params</text>
+  <!-- Legend -->
+  <rect x="310" y="60" width="20" height="10" fill="#6c5ce7" opacity="0.6" stroke="#e6e6e6" stroke-width="0.5"/>
+  <text x="335" y="70" fill="#e6e6e6" font-size="10" font-family="Arial">High Probability</text>
+</svg>

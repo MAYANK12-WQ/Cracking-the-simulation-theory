@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#0f1a2d"/>
+  <text x="200" y="50" text-anchor="middle" fill="#a29bfe" font-size="20" font-family="Arial" font-weight="bold">
+    Parameter Space Explorer
+  </text>
+  <!-- Grid -->
+  <rect x="50" y="80" width="300" height="180" fill="#16213e" stroke="#a29bfe" stroke-width="1"/>
+  <!-- Grid lines -->
+  <line x1="50" y1="140" x2="350" y2="140" stroke="#4a4a6d" stroke-width="1"/>
+  <line x1="50" y1="200" x2="350" y2="200" stroke="#4a4a6d" stroke-width="1"/>
+  <line x1="150" y1="80" x2="150" y2="260" stroke="#4a4a6d" stroke-width="1"/>
+  <line x1="250" y1="80" x2="250" y2="260" stroke="#4a4a6d" stroke-width="1"/>
+  <!-- 3D scatter plot -->
+  <circle cx="80" cy="120" r="6" fill="#fd79a8" opacity="0.9"/>
+  <circle cx="120" cy="160" r="6" fill="#fd79a8" opacity="0.9"/>
+  <circle cx="180" cy="100" r="6" fill="#fd79a8" opacity="0.9"/>
+  <circle cx="220" cy="140" r="6" fill="#fd79a8" opacity="0.9"/>
+  <circle cx="280" cy="110" r="6" fill="#fd79a8" opacity="0.9"/>
+  <circle cx="320" cy="150" r="6" fill="#fd79a8" opacity="0.9"/>
+  <!-- Axes labels -->
+  <text x="200" y="280" text-anchor="middle" fill="#e6e6e6" font-size="12" font-family="Arial">Parameters</text>
+  <text x="15" y="170" text-anchor="middle" transform="rotate(-90, 15, 170)" fill="#e6e6e6" font-size="12" font-family="Arial">Probability</text>
+  <!-- Color legend -->
+  <rect x="310" y="60" width="20" height="10" fill="#fd79a8" stroke="#e6e6e6" stroke-width="0.5"/>
+  <text x="335" y="70" fill="#e6e6e6" font-size="10" font-family="Arial">High Probability</text>
+</svg>

@@ -19,26 +19,31 @@
 
 This project represents a groundbreaking application that uses **state-of-the-art machine learning and deep learning techniques** to explore the simulation hypothesis - the idea that our reality might be an artificial simulation. We combine **rigorous algorithms with cutting-edge 3D visualizations** to make complex concepts intuitive and visually stunning.
 
-## 📊 Advanced 3D Visualizations
+## 📊 Visualizations Gallery
 
-### Cutting-Edge 3D Rendering
-- **Real-time 3D Point Clouds**: Visualize n-dimensional projections with WebGL acceleration
-- **Dynamic 3D Meshes**: Advanced mesh rendering of higher-dimensional structures
-- **Field Line Visualizations**: 3D representations of fundamental force fields
-- **Interactive 3D Controls**: Rotate, zoom, and manipulate visualizations in real-time
+<div align="center">
 
-### Advanced 3D Graphs & Charts
-- **3D Scatter Plots**: Multi-dimensional data projections with color mapping
-- **3D Surface Plots**: Probability distributions across dimensional parameters
-- **3D Line Charts**: Real-time simulation probability tracking in 3D space
-- **Volumetric Rendering**: 3D visualization of probability density functions
-- **Stereographic Projections**: Advanced 3D representations of higher-dimensional objects
+### Main Interface
+<img src="public/images/main-interface.svg" alt="Main Interface 3D Visualization" width="400" height="300">
+<br>
+<i>Interactive 3D visualization of n-dimensional projections</i>
 
-### Physics Simulation Visualizations
-- **3D Particle Systems**: Real-time particle physics in n-dimensional space
-- **3D Force Field Visualization**: Electromagnetic and gravitational field representations
-- **3D Symmetry Analysis**: Visual detection of perfect symmetries in data
-- **3D Quantization Effects**: Visual representation of digital artifacts
+### 3D Point Cloud Visualization
+<img src="public/images/3d-point-cloud.svg" alt="3D Point Cloud Visualization" width="400" height="300">
+<br>
+<i>Real-time 3D point cloud showing higher-dimensional projections</i>
+
+### Parameter Space Explorer
+<img src="public/images/parameter-explorer.svg" alt="Parameter Space Explorer" width="400" height="300">
+<br>
+<i>Multi-dimensional parameter analysis with 3D probability mapping</i>
+
+### Dimensional Analysis Chart
+<img src="public/images/dimensional-analysis.svg" alt="Dimensional Analysis Chart" width="400" height="300">
+<br>
+<i>3D surface plot showing dimension vs simulation probability</i>
+
+</div>
 
 ## 🚀 Key Features
 
@@ -194,47 +199,25 @@ npm start
 3. **Dimensional Analysis**: Compare physics theories with 3D visualizations
 4. **Dimensions Visualization**: Understand different dimensional spaces in 3D
 
-## 📊 Advanced 3D Visualizations
+## 📊 Visualization Specifications
 
-### Real-time 3D Probability Tracking
-```
-    3D Probability Space
-     ^ z-axis: probability
-     |
-     |    * * * * * 
-     |   *       * *
-     |  *         * *
-     | *           * *
-     |*             * *
-     +----------------> x-axis: time
-      y-axis: simulation runs
-```
+### 3D Point Cloud Visualization
+- Interactive rotation and zoom controls
+- Color-coded points based on dimensionality
+- Real-time parameter adjustment feedback
+- Performance optimized for large datasets
 
-### 3D Dimension vs Probability Surface
-```
-    3D Surface Plot
-     ^ z-axis: probability
-     |
-     |    /\
-     |   /  \    /\
-     |  /    \  /  \
-     | /      \/    \
-     +---------------->
-      x-axis: dimensions    y-axis: parameter values
-```
+### 3D Probability Surface Plot
+- X-axis: Dimension count (1-11)
+- Y-axis: Simulation parameters (complexity, quantization, etc.)
+- Z-axis: Simulation probability
+- Interactive mesh rendering with Three.js
 
-### 3D Scatter Plot - Multi-dimensional Analysis
-```
-    3D Scatter Visualization
-     ^ z-axis: quantization
-     |
-     |      o
-     |   o     o
-     | o         o
-     |o           o
-     +-------------> x-axis: symmetry
-      y-axis: complexity
-```
+### Parameter Space Explorer
+- Multiple 3D scatter plots with color mapping
+- Real-time updates as parameters change
+- Interactive legend and controls
+- Export functionality for visualization data
 
 ## 🏆 Advanced Features
 
