@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a1a2a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pieGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0088ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pieGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8800ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pieGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffff00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8800;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pieGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#008888;stop-opacity:1" />
+    </linearGradient>
+    <filter id="pieGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Futuristic pie chart -->
+  <g transform="translate(400, 300)">
+    <!-- Pie slices -->
+    <path d="M 0 0 L 150 0 A 150 150 0 0 1 46.35 -142.66 Z" fill="url(#pieGradient1)" stroke="#ffffff" stroke-width="2" filter="url(#pieGlow)"/>
+    <path d="M 0 0 L 46.35 -142.66 A 150 150 0 0 1 -120.00 -88.17 Z" fill="url(#pieGradient2)" stroke="#ffffff" stroke-width="2" filter="url(#pieGlow)"/>
+    <path d="M 0 0 L -120.00 -88.17 A 150 150 0 0 1 -147.55 21.21 Z" fill="url(#pieGradient3)" stroke="#ffffff" stroke-width="2" filter="url(#pieGlow)"/>
+    <path d="M 0 0 L -147.55 21.21 A 150 150 0 0 1 150 0 Z" fill="url(#pieGradient4)" stroke="#ffffff" stroke-width="2" filter="url(#pieGlow)"/>
+    
+    <!-- Center hole for donut effect -->
+    <circle cx="0" cy="0" r="50" fill="url(#bgGradient)" stroke="#00ffff" stroke-width="2"/>
+  </g>
+  
+  <!-- Data labels -->
+  <text x="400" y="150" text-anchor="middle" fill="#00ffff" font-size="16" font-weight="bold" font-family="Arial" filter="url(#pieGlow)">3D Visualization: 30%</text>
+  <text x="280" y="250" text-anchor="middle" fill="#ff00ff" font-size="16" font-weight="bold" font-family="Arial" filter="url(#pieGlow)">Neural Networks: 25%</text>
+  <text x="320" y="420" text-anchor="middle" fill="#ffff00" font-size="16" font-weight="bold" font-family="Arial" filter="url(#pieGlow)">Mathematics: 25%</text>
+  <text x="500" y="350" text-anchor="middle" fill="#00ff88" font-size="16" font-weight="bold" font-family="Arial" filter="url(#pieGlow)">Physics: 20%</text>
+  
+  <!-- Futuristic chart title -->
+  <text x="400" y="50" text-anchor="middle" fill="#00ffff" font-size="28" font-family="Arial" font-weight="bold" filter="url(#pieGlow)">
+    SIMULATION HYPOTHESIS ANALYSIS
+  </text>
+  <text x="400" y="80" text-anchor="middle" fill="#ff66ff" font-size="18" font-family="Arial" font-style="italic">
+    Multi-Disciplinary Research Distribution
+  </text>
+  
+  <!-- Legend -->
+  <g transform="translate(650, 150)" filter="url(#pieGlow)">
+    <rect width="130" height="150" fill="rgba(0, 0, 30, 0.7)" stroke="#00ffff" stroke-width="2"/>
+    <text x="65" y="20" text-anchor="middle" fill="#00ffff" font-size="14" font-weight="bold" font-family="Arial">LEGEND</text>
+    
+    <rect x="10" y="30" width="15" height="15" fill="url(#pieGradient1)"/>
+    <text x="30" y="42" fill="#00ffff" font-size="12" font-family="Arial">3D Vis</text>
+    
+    <rect x="10" y="55" width="15" height="15" fill="url(#pieGradient2)"/>
+    <text x="30" y="67" fill="#ff00ff" font-size="12" font-family="Arial">NeuralNets</text>
+    
+    <rect x="10" y="80" width="15" height="15" fill="url(#pieGradient3)"/>
+    <text x="30" y="92" fill="#ffff00" font-size="12" font-family="Arial">Math</text>
+    
+    <rect x="10" y="105" width="15" height="15" fill="url(#pieGradient4)"/>
+    <text x="30" y="117" fill="#00ff88" font-size="12" font-family="Arial">Physics</text>
+  </g>
+  
+  <!-- Futuristic decorative elements -->
+  <circle cx="150" cy="150" r="30" fill="none" stroke="#00ffff" stroke-width="2" stroke-dasharray="4,4"/>
+  <circle cx="650" cy="450" r="25" fill="none" stroke="#ff00ff" stroke-width="2" stroke-dasharray="4,4"/>
+  
+  <line x1="100" y1="550" x2="200" y2="530" stroke="#00ffff" stroke-width="2"/>
+  <line x1="700" y1="550" x2="600" y2="530" stroke="#ff00ff" stroke-width="2"/>
+  
+  <!-- Center info -->
+  <circle cx="400" cy="300" r="70" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
+  <text x="400" y="305" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold" font-family="Arial">TOTAL: 100%</text>
+  
+  <!-- Info box -->
+  <rect x="50" y="450" width="200" height="100" fill="rgba(0, 20, 30, 0.6)" stroke="#00ffff" stroke-width="2"/>
+  <text x="150" y="470" text-anchor="middle" fill="#00ffff" font-size="14" font-weight="bold" font-family="Arial">ANALYSIS SUMMARY</text>
+  <text x="60" y="490" fill="#ffffff" font-size="12" font-family="Arial">- 3D Visualization: 30%</text>
+  <text x="60" y="510" fill="#ffffff" font-size="12" font-family="Arial">- Neural Networks: 25%</text>
+  <text x="60" y="530" fill="#ffffff" font-size="12" font-family="Arial">- Mathematics: 25%</text>
+  <text x="60" y="550" fill="#ffffff" font-size="12" font-family="Arial">- Physics: 20%</text>
+</svg>
