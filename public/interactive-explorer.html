@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Simulation Explorer | Cracking the Simulation Theory</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a1a, #1a0a2a, #0a1a2a);
+            color: #00ffff;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 20, 30, 0.7);
+            border: 2px solid #00ffff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #00ffff;
+            color: #00ffff;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .controls-panel {
+            background: rgba(0, 10, 20, 0.8);
+            border: 1px solid #00ffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+
+        .visualization-panel {
+            background: rgba(0, 10, 20, 0.8);
+            border: 1px solid #ff00ff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-title {
+            color: #ff66ff;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            text-align: center;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #00ffcc;
+            font-weight: bold;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            outline: none;
+        }
+
+        .value-display {
+            width: 60px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        #interactive-visualization {
+            width: 100%;
+            height: 400px;
+            background: rgba(0, 0, 20, 0.5);
+            border: 1px solid #00ffff;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .probability-display {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #probability-display {
+            font-size: 3em;
+            font-weight: bold;
+            color: #00ffff;
+            text-shadow: 0 0 20px #00ffff;
+        }
+
+        .probability-bar-container {
+            width: 100%;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+            border: 1px solid #00ffff;
+        }
+
+        #probability-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            width: 42%;
+            transition: width 0.3s ease;
+        }
+
+        .results-section {
+            background: rgba(0, 10, 20, 0.8);
+            border: 1px solid #ffff00;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        th {
+            background: rgba(0, 50, 80, 0.5);
+            color: #00ffff;
+        }
+
+        tr:nth-child(even) {
+            background: rgba(50, 0, 80, 0.1);
+        }
+
+        .explanation {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 20, 30, 0.7);
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+        }
+
+        .explanation h3 {
+            color: #ffff00;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .explanation p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .concept-highlight {
+            color: #ff00ff;
+            font-weight: bold;
+        }
+
+        .glow-text {
+            text-shadow: 0 0 10px #00ffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 INTERACTIVE SIMULATION EXPLORER 🎮</h1>
+            <div class="subtitle">Real-time Quantum-Classical Interface Analysis</div>
+            <p class="subtitle">Adjust parameters to explore simulation probability in real-time</p>
+        </header>
+
+        <div class="main-content">
+            <div class="controls-panel">
+                <h2 class="panel-title">🎮 PARAMETER CONTROLS</h2>
+                
+                <div class="control-group">
+                    <label for="dimension-slider">Dimensions: <span id="dimension-value">4</span></label>
+                    <div class="slider-container">
+                        <input type="range" id="dimension-slider" min="3" max="11" value="4" step="1">
+                        <span class="value-display" id="dimension-value">4</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="complexity-slider">Complexity: <span id="complexity-value">0.6</span></label>
+                    <div class="slider-container">
+                        <input type="range" id="complexity-slider" min="0" max="1" value="0.6" step="0.01">
+                        <span class="value-display" id="complexity-value">0.6</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="quantization-slider">Quantization: <span id="quantization-value">0.4</span></label>
+                    <div class="slider-container">
+                        <input type="range" id="quantization-slider" min="0" max="1" value="0.4" step="0.01">
+                        <span class="value-display" id="quantization-value">0.4</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="symmetry-slider">Symmetry: <span id="symmetry-value">0.5</span></label>
+                    <div class="slider-container">
+                        <input type="range" id="symmetry-slider" min="0" max="1" value="0.5" step="0.01">
+                        <span class="value-display" id="symmetry-value">0.5</span>
+                    </div>
+                </div>
+
+                <div class="probability-display">
+                    <div>Simulation Probability:</div>
+                    <div id="probability-display">42.0%</div>
+                    <div class="probability-bar-container">
+                        <div id="probability-bar" style="width: 42%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visualization-panel">
+                <h2 class="panel-title">🔬 REAL-TIME VISUALIZATION</h2>
+                <canvas id="interactive-visualization"></canvas>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <h2 class="panel-title">📊 SIMULATION RESULTS</h2>
+            <table id="results-table">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dimensions</td>
+                        <td>4</td>
+                        <td>Number of spatial dimensions</td>
+                    </tr>
+                    <tr>
+                        <td>Complexity</td>
+                        <td>0.60</td>
+                        <td>System complexity factor</td>
+                    </tr>
+                    <tr>
+                        <td>Quantization</td>
+                        <td>0.40</td>
+                        <td>Quantum discretization level</td>
+                    </tr>
+                    <tr>
+                        <td>Symmetry</td>
+                        <td>0.50</td>
+                        <td>Perfect symmetry detection</td>
+                    </tr>
+                    <tr>
+                        <td>Simulation Probability</td>
+                        <td>42.0%</td>
+                        <td>Calculated simulation likelihood</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="explanation">
+            <h3 class="glow-text">🔍 UNDERSTANDING THE SIMULATION HYPOTHESIS</h3>
+            <p>This interactive explorer allows you to adjust key parameters that might indicate we're living in a simulation:</p>
+            <p>• <span class="concept-highlight">Dimensions</span>: Higher dimensions (5D, 10D, 11D) predicted by physics theories might be computational artifacts</p>
+            <p>• <span class="concept-highlight">Complexity</span>: Highly complex systems might indicate computational optimization in a simulated reality</p>
+            <p>• <span class="concept-highlight">Quantization</span>: If reality is pixelated at the Planck scale, it suggests a digital substrate</p>
+            <p>• <span class="concept-highlight">Symmetry</span>: Perfect mathematical symmetries might indicate computational efficiency optimization</p>
+            <p>Adjust these parameters to see how they affect the calculated probability that our reality is a simulation. The visualization shows quantum field interactions in real-time.</p>
+        </div>
+    </div>
+
+    <script src="interactive-explorer.js"></script>
+</body>
+</html>
